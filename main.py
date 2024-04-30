@@ -7,6 +7,11 @@ from preprocessing import preprocess_text
 
 
 class CosineSimilarity:
+    """
+    1- Calculate the cosine similarity range from (-1, 1).
+    2- Specify dims for norms across all elements in the vector.
+    3- Handeling division by 0 by adding small epsilon.
+    """
     def __init__(self, dim=1, eps=1e-8):
         self.dim = dim
         self.eps = eps

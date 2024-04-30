@@ -27,6 +27,13 @@ from nltk.corpus import stopwords
 
 
 def preprocess_text(text):
+    """
+    1- Lower case.
+    2- Remove puncituations & special chars not in [^\w\s].
+    3- Tokenize text to words.
+    4- Remove Stop words in english that will not add to the meaning.
+    5- Stemmer like making "running" back to its base word "run".
+    """
     text = text.lower()
     text = re.sub(r"[^\w\s]", "", text)
     stop_words = nltk.corpus.stopwords.words("english")

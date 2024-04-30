@@ -6,7 +6,9 @@ from main import MODEL
 from main import CosineSimilarity
 
 def display_similar_songs(data, similarity_scores, k):
+    # Get top k similarities in form of indices by partitioning.
     top_similar_song_indices = np.argpartition(similarity_scores, -k)[-k:]
+    # Sort indices based on the order that return accending similarities and retrive from -1.
     top_similar_song_indices = top_similar_song_indices[np.argsort(similarity_scores[top_similar_song_indices])][::-1]
 
     top_k_songs = []
